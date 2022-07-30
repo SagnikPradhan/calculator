@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+div#calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+div#calculator-display {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #5e98ce36;
+
+  padding: 1rem;
+  border-radius: 15px;
+
+  width: 25ch;
+
+  word-wrap: break-word;
+}
+
+div#calculator-display h2 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: unset;
+  padding: 0;
+}
+
+div#calculator-display h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: unset;
+  padding: 1rem 0 0 0;
+}
+
+div#calculator-keypad {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+div#calculator-keypad > div.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+div#calculator-keypad > div.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+div#calculator-keypad > div.grid > button:last-child {
+  grid-column: 2 / 3;
+}
+
+div#calculator-keypad button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  padding: 0.75rem 1.25rem;
+  border-radius: 15px;
+  border: none;
+
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  background-color: #5e98ce36;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+}
+
+div#calculator-keypad button.accent {
+  background-color: black;
+  color: white;
+}
+
+div#calculator-keypad button:hover {
+  background-color: #33a3ff;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
