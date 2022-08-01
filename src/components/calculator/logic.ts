@@ -59,9 +59,13 @@ function expressionReducer(state: State, action: Action) {
       const lastToken = state.expression.at(-1);
 
       // If it's a number remove only last digit
-      if (lastToken?.type === "number")
-        lastToken.value = parseInt(lastToken.value.toString().slice(0, -1));
-      else state.expression.pop();
+      if (lastToken?.type === "number") {
+        const stringValue = lastToken.value.toString();
+
+        if (stringValue.length > 1)
+          lastToken.value = parseInt(stringValue.slice(0, -1));
+        else state.expression.pop();
+      } else state.expression.pop();
 
       state.value = 0;
       break;
